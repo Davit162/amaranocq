@@ -1,0 +1,36 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { auth } from "../firebase";
+
+interface IconInputProps {
+  search: string;
+  setSearch: (value: string) => void;
+}
+
+export default function IconInput({ search, setSearch }: IconInputProps) {
+  const navigate = useNavigate();
+
+  const click = () => navigate("/likes");
+
+  const handleLogout = async () => {
+    try {
+      await signOut(auth);
+      console.log("Դուրս եկար");
+    } catch (error) {
+      console.error("Logout error:", error);
+    }
+  };
+
+  return (
+    <div className="iconimput" style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+      <div className="icon" style={{ display: "flex", gap: "10px" }}>
+        <i className="fa fa-globe" aria-hidden="true"></i>
+        <i className="fa fa-user" aria-hidden="true" onClick={handleLogout}></i>
+        <i className="fa fa-solid fa-basket-shopping" onClick={click}></i>
+      </div>
+
+      
+    </div>
+  );
+}
