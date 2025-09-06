@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Skeleton from "./Skeleton";
 import { useMarzStore } from "../Store/storeMarz";
-import {useMarzStore2} from "../Store/marzStore"
+import { useMarzStore2 } from "../Store/marzStore"
 import Likes from "./like";
 import Arandznatan from "./Arandznatun";
 import Houses from "./Framehouses";
@@ -11,6 +11,7 @@ import Tesaran from "./Tesaran";
 import Pahanj from "./Pahanj";
 import New from "./New";
 import Bnakaran from "./Bnakaran";
+import { useNavigate } from "react-router-dom";
 
 interface NkarData {
   src: string;
@@ -26,7 +27,8 @@ export default function Nkar() {
   const [loading, setLoading] = useState(true);
   const [columns, setColumns] = useState(3);
   const [search, setSearch] = useState("");
-
+  const navigate = useNavigate();
+  
   const {
     selected,
     count,
@@ -159,7 +161,7 @@ export default function Nkar() {
           <Bnakaran />
         </div>
       );
-    } 
+    }
   }
 
   return (
@@ -239,6 +241,7 @@ export default function Nkar() {
         ) : filteredData && filteredData.length > 0 ? (
           filteredData.map((el, index) => (
             <div
+              onClick={() => window.open(`/maininfo/${el.tex}`, "_blank")}
               key={index}
               className="max-w-sm bg-white rounded-xl shadow-md overflow-hidden border border-gray-200"
             >

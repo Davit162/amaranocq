@@ -8,7 +8,7 @@ export default function Qartezcalendar() {
   function click() {
     navigate("/qartez");
   }
-
+  
   function click2() {
     setShowCalendar(true);
   }
