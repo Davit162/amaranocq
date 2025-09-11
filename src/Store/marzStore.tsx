@@ -1,18 +1,19 @@
 import { create } from "zustand";
 
-interface MarzData {
-  name: string;
-  qanak: number | string;
-}
-
 interface MarzState {
   selected: string[];
+  count: number;
+  minPrice: number | "";
+  maxPrice: number | "";
   toggle: (name: string) => void;
   clear: () => void;
 }
 
-export const useMarzStore2 = create<MarzState>((set) => ({
+export const useMarzStore = create<MarzState>((set) => ({
   selected: [],
+  count: 1,
+  minPrice: "",
+  maxPrice: "",
   toggle: (name) =>
     set((state) => ({
       selected: state.selected.includes(name)
@@ -21,3 +22,4 @@ export const useMarzStore2 = create<MarzState>((set) => ({
     })),
   clear: () => set({ selected: [] }),
 }));
+ 

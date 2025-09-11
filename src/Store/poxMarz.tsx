@@ -15,3 +15,4 @@ export const useMarzStore = create<MarzState>((set) => ({
   setMinPrice: (value) => set({ minPrice: value }),
   setMaxPrice: (value) => set({ maxPrice: value }),
 }));
+ 

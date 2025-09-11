@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useMarzStore2 } from "../Store/marzStore";
+import { useMarzStore } from "../Store/storeMarz";
 
 interface MarzData {
   name: string;
@@ -8,7 +8,7 @@ interface MarzData {
 
 export default function Marz() {
   const [data, setData] = useState<MarzData[]>([]);
-  const { selected, toggle } = useMarzStore2();
+  const { selected, toggle, clear } = useMarzStore();
 
   useEffect(() => {
     const xhr = new XMLHttpRequest();
@@ -20,23 +20,6 @@ export default function Marz() {
       if (xhr.status === 200 && xhr.readyState === 4) {
         const res: MarzData[] = JSON.parse(xhr.responseText);
         setData(res);
-      }
-    }; 
-    xhr.send();
-  }, []);
-  useEffect(() => {
-    const xhr = new XMLHttpRequest();
-    xhr.open(
-      "GET",
-      "https://amaranocfirebasa-default-rtdb.firebaseio.com/db.json"
-    );
-    xhr.onreadystatechange = () => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        const parsed = JSON.parse(xhr.responseText);
-        const arr: MarzData[] = Array.isArray(parsed)
-          ? parsed
-          : Object.values(parsed);
-        setData(arr);
       }
     };
     xhr.send();
@@ -56,8 +39,9 @@ export default function Marz() {
               checked={selected.includes(el.name)}
               onChange={() => toggle(el.name)}
             />
-            {" " + el.name + " (" + el.qanak + ")"}
+            <span>{el.name}</span>
           </div>
+          <span className="text-gray-500">{el.qanak}</span>
         </label>
       ))}
     </div>

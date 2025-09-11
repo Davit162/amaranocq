@@ -6,7 +6,7 @@ export default function Zambyux() {
   const { liked } = useMarzStore();
 
   if (liked.length === 0) {
-    return <p style={{color:"red",fontSize:"25px",textAlign:"center"}}>Բան չկա</p>;
+    return <p className="text-center text-5xl text-red-500 text-lg font-medium mt-4">Բան չկա</p>;
   }
 
   return (

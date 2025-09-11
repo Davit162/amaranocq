@@ -30,7 +30,7 @@ export const useMarzStore = create<MarzState>((set, get) => ({
         ? state.selected.filter((n) => n !== name)
         : [...state.selected, name],
     })),
-
+ 
   clear: () => set({ selected: [] }),
 
   toggleLike: (nkar) => {

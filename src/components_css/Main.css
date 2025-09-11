@@ -78,17 +78,18 @@
   padding: 10px;
   text-align: center;
   width: 50px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 100%;
-  color: white;
-  background-color: gray;
+  color: black;
+  background-color: rgb(243, 235, 235);
 }
 
 .qanak {
   width: 50px;
+  padding: 10px;
   text-align: center;
   border: 1px solid #ccc;
-  border-radius: 15px;
+  border-radius: 10px;
 }
 
 .mainqanak {
@@ -116,18 +117,14 @@
   border-radius: 15px;
 }
 
-.qartez {
-  margin-left: 15px;
-  display: flex;
-}
-
 .qartezcalendar {
   display: flex;
   margin-top: 70px;
 }
-
 .newDiv {
-  display: flex;
+  margin-left: 120px;
+  display: grid;
+  grid-template-columns: 400px 1200px;
 }
 
 .houses {
@@ -193,7 +190,7 @@
   position: relative;
   display: flex;
   align-items: center;
-  width: 850px;
+  width: 1000px;
   margin: auto;
 }
 
@@ -201,13 +198,14 @@
   display: flex;
   align-items: center;
   gap: 40px;
-  border-top: 1px solid #ccc;
-  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #f1eded;
+  border-bottom: 1px solid #f1eded;
   padding: 15px 10px;
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   scroll-behavior: smooth;
+  height: 80px;
 }
 
 .orinak::-webkit-scrollbar {
@@ -226,12 +224,12 @@
 .orinak>div i {
   font-size: 26px;
   margin-bottom: 5px;
-  color: #000;
+  color: rgb(0, 0, 0);
 }
 
 .orinak>div h5 {
   font-size: 14px;
-  font-weight: 700;
+  font-weight: 400;
   color: #000;
   margin: 0;
 }
@@ -364,17 +362,17 @@
   padding: 20px;
 }
 
-.newDivs > div {
+.newDivs>div {
   background: #fff;
   border-radius: 15px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.newDivs > div:hover {
+.newDivs>div:hover {
   transform: translateY(-5px);
-  box-shadow: 0px 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .newDivs img {
@@ -391,7 +389,7 @@
   margin: 15px;
 }
 
-.newDivs div > div {
+.newDivs div>div {
   padding: 0 15px 20px 15px;
 }
 
@@ -423,4 +421,52 @@
 .newDivs button:hover {
   background: #ff7300;
   color: #fff;
+}
+
+.maininfodiv {
+  margin-top: 100px;
+  margin-left: 100px;
+  width: 90vw;
+}
+
+.imgmain {
+  height: 600px;
+}
+
+.aravelutyun {
+  margin-top: 50px;
+  margin-left: 150px;
+  padding: 10px;
+  width: 80vw;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+.qartez {
+  height: 65vh;
+}
+
+.mainnkardiv {
+  width: 20vw;
+}
+
+.tvyalerror {
+  color: gray;
+  margin: 15px;
+  margin-top: 100px;
+  margin-left: 650px;
+  font-size: 25px;
+  font-family: cursive;
+}
+
+.pgic {
+  color: #f1eded;
+}
+
+.senaykqanakdiv {
+  margin-top: 10px;
+}
+
+.loxdiv {
+  margin-top: 10px;
 }
