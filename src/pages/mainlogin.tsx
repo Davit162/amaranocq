@@ -2,6 +2,7 @@ import React, { useState, FormEvent, ChangeEvent } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import Header from "../components/Header";
 
 export default function Login() {
   const [email, setEmail] = useState<string>("");
@@ -22,10 +23,11 @@ export default function Login() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-yellow-400 via-orange-500 to-black">
-      <div className="bg-black/80 backdrop-blur-lg p-8 rounded-2xl shadow-2xl w-full max-w-md">
-        <h2 className="text-3xl font-bold text-yellow-400 mb-6 text-center">
-          Մուտք գործել
+    <div className="min-h-screen flex items-center justify-center ">
+      <div ><Header /></div>
+      <div className=" p-8 rounded-2xl shadow-2xl w-full max-w-md">
+        <h2 className="text-3xl font-bold mb-6 text-center">
+          Մուտք
         </h2>
 
         {error && (
@@ -67,9 +69,9 @@ export default function Login() {
 
           <button
             type="submit"
-            className="w-full py-3 rounded-lg bg-gradient-to-r from-yellow-400 to-orange-500 text-black font-bold hover:scale-105 transform transition"
+            className="w-full py-3 rounded-lg bg-yellow-500 rounded-3xl  text-white font-bold hover:scale-105 transform transition"
           >
-            Մուտք գործել
+            Մուտք
           </button>
 
           <p className="text-center text-sm text-gray-300">
@@ -78,7 +80,7 @@ export default function Login() {
               to="/register"
               className="text-yellow-400 hover:text-orange-400 font-semibold"
             >
-              Գրանցվել
+              Գրանցում
             </Link>
           </p>
         </form>

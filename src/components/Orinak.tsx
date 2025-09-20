@@ -10,19 +10,22 @@ interface OrinakData {
 export default function Orinak() {
   const [orinak, setOrinak] = useState<OrinakData[]>([]);
   const scrollRef = useRef<HTMLDivElement>(null);
-  const { setSelectedOrinak } = useMarzStore();
+
+  // state վերցնում ենք store-ից
+  const { selectedOrinak, setSelectedOrinak } = useMarzStore();
 
   useEffect(() => {
     const xhr = new XMLHttpRequest();
-    xhr.open("GET", "https://amaranocfirebasa-default-rtdb.firebaseio.com/dborinak.json");
-
+    xhr.open(
+      "GET",
+      "https://amaranocfirebasa-default-rtdb.firebaseio.com/dborinak.json"
+    );
     xhr.onreadystatechange = () => {
       if (xhr.status === 200 && xhr.readyState === 4) {
         const data: OrinakData[] = JSON.parse(xhr.responseText);
         setOrinak(data);
       }
     };
-
     xhr.send();
   }, []);
 
@@ -43,11 +46,12 @@ export default function Orinak() {
       <button className="arrow left" onClick={scrollLeft}>
         <span>&#8592;</span>
       </button>
+
       <div className="orinak" ref={scrollRef}>
         {orinak.map((orel, index) => (
           <div
             key={index}
-            className={orel.divclass}
+            className={`houses ${selectedOrinak === orel.text ? "active" : ""}`}
             onClick={() => setSelectedOrinak(orel.text)}
             style={{ cursor: "pointer" }}
           >
@@ -56,6 +60,7 @@ export default function Orinak() {
           </div>
         ))}
       </div>
+
       <button className="arrow right" onClick={scrollRight}>
         <span>&#8594;</span>
       </button>

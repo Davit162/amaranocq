@@ -18,7 +18,7 @@ export default function Night() {
             }`}
         >
           {btn}
-        </button>
+        </button> 
       ))}
     </div>
   );

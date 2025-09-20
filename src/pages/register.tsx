@@ -2,6 +2,7 @@ import React, { useState, FormEvent, ChangeEvent } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../firebase";
+import Header from "../components/Header";
 
 export default function Register() {
   const [email, setEmail] = useState<string>("");
@@ -28,10 +29,11 @@ export default function Register() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-black via-orange-600 to-yellow-400">
-      <div className="bg-black/80 backdrop-blur-lg p-8 rounded-2xl shadow-2xl w-full max-w-md">
+    <div className="min-h-screen flex items-center justify-center ">
+      <div ><Header /></div>
+      <div className=" p-8 rounded-2xl shadow-2xl w-full max-w-md">
         <h2 className="text-3xl font-bold text-yellow-400 mb-6 text-center">
-          Գրանցվել
+          Գրանցում
         </h2>
 
         {error && (
@@ -82,13 +84,13 @@ export default function Register() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => setConfirmPassword(e.target.value)}
               required
               placeholder="********"
-              className="mt-1 w-full p-3 rounded-lg bg-gray-900 text-white placeholder-gray-400 border border-gray-700 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
+              className="mt-1 w-full p-3 rounded-lg  text-white placeholder-gray-400 border border-gray-700 focus:ring-2 focus:ring-yellow-400 focus:outline-none"
             />
           </div>
 
           <button
             type="submit"
-            className="w-full py-3 rounded-lg bg-gradient-to-r from-orange-500 to-yellow-400 text-black font-bold hover:scale-105 transform transition"
+            className="w-full py-3 rounded-lg bg-yellow-500 rounded-3xl  text-white font-bold hover:scale-105 transform transition"
           >
             Գրանցվել
           </button>

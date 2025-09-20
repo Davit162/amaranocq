@@ -7,7 +7,7 @@
   padding: 10px;
 }
 
-header {
+header { 
   display: flex;
   justify-content: space-around;
 }
@@ -28,15 +28,23 @@ header {
 
 .mainHeader {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .teg {
   padding: 10px;
 }
 
+.tegs {
+  display: flex;
+}
+
 .btn {
   text-decoration: none;
   position: relative;
+  cursor: pointer;
+  padding: 10px;
 }
 
 .btn::after {
@@ -50,12 +58,9 @@ header {
   transition: 0.3s;
 }
 
-.btn:hover::after {
+.btn:hover::after,
+.btn.active::after {
   width: 100%;
-}
-
-.tegs {
-  display: flex;
 }
 
 .iconimput {

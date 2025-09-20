@@ -9,6 +9,7 @@ import Register from "./pages/register";
 import Home from "./pages/Home";
 import Zambyux from "./pages/likesZamb";
 import Map from "./components/Qartez1";
+import Map2 from "./components/Qartez2";
 import Zexj from "./components/Zexj";
 import Work from "./components/Work";
 import Us from "./components/Aboutus";
@@ -39,6 +40,7 @@ export default function App() {
       <Route path="/" element={user ? <Home /> : <Navigate to="/login" />} />
       <Route path="/likes" element={<Zambyux />} />
       <Route path="/qartez" element={user ? <Map /> : <Navigate to="/login" />} />    
+      <Route path="/qartez2" element={user ? <Map2 /> : <Navigate to="/login" />} />    
       <Route path="/Home" element={user ? <Home /> : <Navigate to="/login" />} />    
       <Route path="/zexj" element={user ? <Zexj /> : <Navigate to="/login" />} />  
       <Route path="/work" element={user ? <Work /> : <Navigate to="/login" />} />  

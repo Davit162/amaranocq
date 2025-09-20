@@ -131,11 +131,9 @@
   display: flex;
   text-align: center;
   flex-direction: column;
-}
-
-.houses {
   text-decoration: none;
   position: relative;
+  cursor: pointer;
 }
 
 .houses::after {
@@ -149,9 +147,11 @@
   transition: 0.3s;
 }
 
-.houses:hover::after {
+.houses:hover::after,
+.houses.active::after {
   width: 100%;
 }
+
 
 .qartez {
   display: flex;
@@ -235,10 +235,10 @@
 }
 
 .arrow {
-  width: 40px;
+  width: 60px;
   height: 40px;
   border: 1px solid #aaa;
-  border-radius: 50%;
+  border-radius: 100%;
   background: #fff;
   display: flex;
   align-items: center;
